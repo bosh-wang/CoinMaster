@@ -13,7 +13,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+  print('We have logged in as {0.user}'.format(client))
 
 
 @client.event
@@ -166,4 +166,16 @@ async def on_message(message):
             await message.channel.send(response)
 
 keep_alive()
+
+# change = alert.alert()
+# if change:
+#   text_channel_list = []
+#   for server in client.servers:
+#       for channel in server.channels:
+#           if channel.type == 'Text':
+#               text_channel_list.append(channel)
+#   for channel in text_channel_list:
+#     await channel.send('hello')
+  
+
 client.run(token)

@@ -11,8 +11,8 @@ def get_current_coin_price(coin_type):
     chrome_options.add_argument('--disable-dev-shm-usage')
 
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get(f'https://www.pionex.com/zh-TW/trade/{coin_type}')
-    time.sleep(1)
+    driver.get(f'https://www.pionex.com/zh-TW/trade/{coin_type}/Manual')
+    time.sleep(10)
     soup = bs(driver.page_source, 'lxml')
     price = soup.find_all('title')
     for p in price:
