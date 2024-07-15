@@ -6,7 +6,7 @@ import get_current_coin_price as get
 # import get_history_coin_price_image as get_figure
 from keep_alive import keep_alive
 
-token = os.get("TOKEN")
+token = os.environ["TOKEN"]
 
 intents = discord.Intents.default()
 intents.message_content = True
