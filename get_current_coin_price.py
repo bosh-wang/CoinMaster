@@ -36,6 +36,7 @@ def get_coin_news_url(coin):
   
   
   response = requests.get(url, headers = headers)
+  print(response)
   response.encoding = 'utf-8'
   
   soup = bs(response.text, 'html.parser')

@@ -6,9 +6,11 @@ import get_current_coin_price as get
 # import get_history_coin_price_image as get_figure
 from keep_alive import keep_alive
 
-token = os.environ['TOKEN']
+token = os.get("TOKEN")
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.message_content = True
+client = discord.Client(intents=intents)
 
 
 @client.event
@@ -22,7 +24,7 @@ async def on_message(message):
         return
 
     msg = message.content
-
+    print(msg)
     # start messages
     if msg.startswith("!hello"):
         await message.channel.send(
@@ -68,14 +70,6 @@ async def on_message(message):
     if msg.startswith("!author"):
         await message.channel.send(
             ''':red_circle:  Type !shadowslayer to see the profile of shadowslayer\nEg: !shadowslayer\n:red_circle:  Type !bosh to see the profile of bosh\nEg: !bosh\n:red_circle:  Type !surprise to see the surprise\nEg: !surprise'''
-        )
-
-    if msg.startswith("!shadowslayer"):
-        await message.channel.send(":u5272: 葉董好 :point_up::point_down:\n")
-
-    if msg.startswith("!bosh"):
-        await message.channel.send(
-            "LIFELINE!!!!RES ME!!!!LIFELINE:face_with_symbols_over_mouth::face_with_symbols_over_mouth:\n"
         )
 
     if msg.startswith("!surprise"):
